@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolás Kass — Arquitecto de software e ingeniero de datos | CV</title>
+<meta name="description" content="Biólogo que construye software en producción. Sistemas de gestión, procesamiento de datos geoespaciales y el rigor de medición detrás de los dos. La Plata, Argentina.">
+<link rel="canonical" href="https://nicolaskass.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://nicolaskass.github.io/">
+<link rel="alternate" hreflang="es" href="https://nicolaskass.github.io/es/">
+<meta property="og:title" content="Nicolás Kass — Arquitecto de software e ingeniero de datos">
+<meta property="og:description" content="Biólogo que construye software en producción. Sistemas de gestión, datos geoespaciales y el rigor de medición detrás de los dos.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/cv.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="langbar">
+    <a href="../">EN</a>
+    <span class="is-current">ES</span>
+</nav>
+
+<header class="head">
+    <h1>Nicolás Kass</h1>
+    <p class="role">Arquitecto de software e ingeniero de datos</p>
+    <p class="pitch">
+        Construyo los sistemas con los que las PyMEs trabajan todos los días —inventario,
+        punto de venta, facturación, herramientas de campo— y los procesos de datos que van
+        atrás. Backend, frontend, deploy y la operación misma, porque durante casi toda mi
+        carrera no hubo a quién delegarle nada de eso. Vengo de la biología de campo, y ahí
+        aprendí que un número tiene que poder defenderse.
+    </p>
+    <div class="meta">
+        <span>La Plata, Argentina · trabajo remoto sin problema</span>
+        <span><a href="https://github.com/nicolaskass">github.com/nicolaskass</a></span>
+        <span><a href="https://www.linkedin.com/in/nicolaskass">LinkedIn</a></span>
+        <span><a href="https://t3.com.ar">t3.com.ar</a></span>
+    </div>
+</header>
+
+<section>
+    <h2>Lo que publiqué</h2>
+    <p class="lead">
+        Cuatro repositorios públicos que documentan cómo están construidos mis sistemas y por
+        qué. Nada de código de clientes — el razonamiento: qué decidí, qué descarté y qué me
+        costó cada decisión. <strong>33 registros de decisión de arquitectura</strong> entre
+        los cuatro.
+    </p>
+
+    <div class="repos">
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/specialty-retail-erp">Sistema de gestión de retail</a></h3>
+            <span class="url">github.com/nicolaskass/specialty-retail-erp</span>
+            <p class="what">Un ERP en producción · 13 módulos · 84 modelos · 229 rutas · ~190k líneas</p>
+            <p>
+                Arquitectura de sistemas a escala real: módulos como contextos acotados con un
+                grafo de dependencias acíclico, y una consolidación que unificó cuatro tipos de
+                transacción y tres sistemas de pago sobre registros financieros vivos.
+            </p>
+            <div class="tags">
+                <span class="tag">Django</span><span class="tag">DRF</span><span class="tag">MongoDB</span><span class="tag">React</span><span class="tag">Docker</span><span class="tag">Traefik</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/geospatial-survey-toolkit">Herramientas de campo para agrimensura</a></h3>
+            <span class="url">github.com/nicolaskass/geospatial-survey-toolkit</span>
+            <p class="what">Herramientas de campo para un estudio de agrimensura</p>
+            <p>
+                Control de obra vial, validación de códigos de relevamiento y vectorización de
+                planos a CAD, entregadas a agrimensores con Windows, sin Python y a veces sin
+                internet. La herramienta marca las anomalías y no corrige ninguna: el dato de
+                campo es evidencia.
+            </p>
+            <div class="tags">
+                <span class="tag">Python</span><span class="tag">Shapely</span><span class="tag">Streamlit</span><span class="tag">ezdxf</span><span class="tag">potrace</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/geospatial-data-processing">Procesamiento de datos geoespaciales</a></h3>
+            <span class="url">github.com/nicolaskass/geospatial-data-processing</span>
+            <p class="what">Pipeline de LiDAR y fotogrametría · libro de referencia, 67 capítulos</p>
+            <p>
+                Rigor de medición aplicado a datos de terreno: validación contra puntos de
+                control que nunca se usaron en el ajuste, incertidumbre propagada al volumen
+                entregado como dos cotas honestas, y controles que se niegan a calcular en vez
+                de devolver un número creíble y falso.
+            </p>
+            <div class="tags">
+                <span class="tag">LiDAR</span><span class="tag">Fotogrametría</span><span class="tag">PDAL</span><span class="tag">GDAL</span><span class="tag">rasterio</span><span class="tag">Quarto</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/ecological-data-analysis">Análisis de datos ecológicos</a></h3>
+            <span class="url">github.com/nicolaskass/ecological-data-analysis</span>
+            <p class="what">La estadística de cuatro manuscritos · 4 paquetes de reproducibilidad publicados</p>
+            <p>
+                Captura-recaptura bayesiana implementada a mano y contrastada contra una
+                referencia establecida, con análisis de sensibilidad a los priors y una
+                simulación del sesgo de mi propio estimador. Cada número que se reporta se
+                genera; ninguno se transcribe.
+            </p>
+            <div class="tags">
+                <span class="tag">Inferencia bayesiana</span><span class="tag">MCMC</span><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">Reproducibilidad</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section>
+    <h2>Cómo trabajo</h2>
+    <p class="lead">
+        Lo que no es estándar. Django y React no diferencian a nadie; esto sí.
+    </p>
+
+    <div class="principles">
+        <div class="principle">
+            <h3>Hago imposible la desincronización en vez de prometer evitarla</h3>
+            <p>
+                Un hook post-commit que marca la documentación que quedó vieja respecto del
+                código. Un verificador que chequea que cada cita del código al libro siga
+                resolviendo. Un archivo generado del que un paper lee sus números, para que
+                texto y tablas no puedan contradecirse. Tres dominios, tres veces la misma
+                conclusión: todo lo que se mantiene por intención se desincroniza — hay que
+                atarlo mecánicamente.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>Mido lo que gasto</h3>
+            <p>
+                Cada llamada a un modelo de lenguaje en producción registra tokens, latencia y
+                costo estimado, con una tabla de precios mantenida. El costo por función es una
+                consulta, no una sorpresa a fin de mes. La inferencia es una compra, y los
+                sistemas miden lo que compran.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>Diseño qué pasa cuando una dependencia no está</h3>
+            <p>
+                Las integraciones opcionales degradan en vez de fallar: el SDK del proveedor se
+                importa en el punto de uso, cada entrada devuelve un resultado estructurado en
+                lugar de levantar excepción, y el flujo del negocio termina con un campo vacío.
+                Una integración de terceros lleva meses rota en producción, por diseño, sin una
+                sola falla visible para el usuario.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>Sé dónde tiene que parar la automatización</h3>
+            <p>
+                En las herramientas de agrimensura el software clasifica las anomalías en tres
+                niveles de severidad y no corrige ninguna, porque un punto mal codificado a veces
+                es un error de tipeo y a veces es el único defecto real de la obra. Automatizar
+                un juicio solo es seguro cuando equivocarse sale barato.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>Escribo lo que costó cada decisión</h3>
+            <p>
+                Cada registro de decisión tiene su sección de desventajas, incluidos los casos
+                donde para otro problema elegiría distinto. Un documento que solo lista
+                beneficios es un folleto, y le baja credibilidad a todo lo que tiene alrededor.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Experiencia</h2>
+
+    <article class="entry">
+        <h3>Fundador · Consultor de procesos y sistemas</h3>
+        <p class="org">T³ — Three Tech Thinkers · La Plata, Argentina</p>
+        <p class="when">[[T3_START]] – actualidad</p>
+        <ul>
+            <li>Diagnóstico operativo para PyMEs: mapeo de procesos, cuantificación de las pérdidas de tiempo y dinero, y plan de intervención priorizado por impacto.</li>
+            <li>Dirección de proyecto de punta a punta: alcance, secuencia de implementación, gestión de los actores involucrados y evaluación de resultados contra los objetivos del diagnóstico.</li>
+            <li>Desarrollo full-stack de sistemas de gestión a medida: Python/Django y Node.js en backend, React con Vite en frontend, MongoDB y SQL, APIs REST e integraciones con terceros.</li>
+            <li>Integración de APIs de modelos de lenguaje en sistemas en producción, con medición de costo por llamada y degradación elegante para que una caída del proveedor nunca frene la operación.</li>
+            <li>Infraestructura propia: Linux, Docker y Compose, Traefik y Nginx, despliegue en VPS con SSL y CI/CD sobre GitHub Actions.</li>
+            <li>Rediseño de procesos y documentación bajo criterios ISO 9001.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Responsable de operaciones y desarrollo de sistemas</h3>
+        <p class="org">Digital Discos · La Plata, Argentina</p>
+        <p class="when">[[DIGI_START]] – 2026</p>
+        <ul>
+            <li>Dirección de la operación completa de un comercio minorista con 30 años de trayectoria: compras, ventas, atención, personal, stock y proveedores.</li>
+            <li>Diseñé y construí el sistema de gestión del negocio: inventario preparado para más de 200.000 artículos <em>únicos</em> —fichas distintas con precio y stock propios, no unidades repetidas—.</li>
+            <li>Integración con la API de un marketplace para publicación, control de precios y monitoreo contra el mercado real.</li>
+            <li>Automatización del circuito de pedidos de punta a punta: entrada con catálogo, precio y disponibilidad actualizados, y procesamiento de la venta sin intervención manual.</li>
+            <li>El negocio pasó de vender solo en el local a operar a nivel nacional sin ampliar la estructura.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Docente universitario · Investigador</h3>
+        <p class="org">Universidad Nacional de La Plata (UNLP) · Argentina</p>
+        <p class="when">[[UNLP_START]] – actualidad</p>
+        <ul>
+            <li>Investigación en ciencias naturales y docencia de grado. Diseño de estudios sin antecedentes previos, análisis de datos y comunicación de resultados.</li>
+            <li>Doctorando en Ciencias Naturales. Cuatro manuscritos en revisión o preparación, cada uno con su paquete público de reproducibilidad.</li>
+            <li>Es el origen directo del método que aplico en consultoría: entender el sistema antes de intervenirlo, medir contra un objetivo definido y ajustar sobre evidencia, no sobre intuición.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Consultor externo de procesos · ISO 9001</h3>
+        <p class="org">Independiente</p>
+        <p class="when">[[ISO_YEARS]]</p>
+        <ul>
+            <li>Rediseño de procesos y procedimientos operativos bajo ISO 9001, identificación y cuantificación de pérdidas de tiempo y económicas no registradas, y documentación del sistema de gestión de calidad.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Alumni · Colíder de proyecto</h3>
+        <p class="org">Conservation Leadership Programme</p>
+        <p class="when">2020 · 2022</p>
+        <ul>
+            <li>Programa internacional de formación de líderes en conservación: planificación y gestión de proyectos, trabajo con actores involucrados y comunicación estratégica. Cohorte global virtual en 2020; presencial en Sudáfrica en 2022, con cohortes de LATAM y África.</li>
+            <li>Future Conservationist Award como colíder del equipo.</li>
+        </ul>
+    </article>
+</section>
+
+<section>
+    <h2>Aptitudes técnicas</h2>
+    <div class="skills">
+        <dl class="skillrow">
+            <dt>Backend</dt>
+            <dd>Python · Django · Django REST Framework · Node.js · Express · diseño de APIs REST · JWT y OAuth · MongoDB / MongoEngine · SQL</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Frontend</dt>
+            <dd>React · Vite · TypeScript · JavaScript · Tailwind · TanStack Query · HTML/CSS</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Infraestructura</dt>
+            <dd>Linux · Docker y Compose · Traefik v3 · Nginx · operación de VPS · Let's Encrypt · GitHub Actions · servidores MCP</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Geoespacial</dt>
+            <dd>GDAL/OGR · PDAL · rasterio · Shapely · GeoPandas · clasificación LiDAR · fotogrametría (SfM/MVS) · DTM/DSM · DXF · GNSS RTK/PPK</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Datos y estadística</dt>
+            <dd>NumPy · SciPy · pandas · inferencia bayesiana y MCMC · modelos de captura-recaptura · métodos no paramétricos · propagación de incertidumbre · Matplotlib</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Práctica</dt>
+            <dd>Registros de decisión de arquitectura · diseño de monolito modular · disciplina de migraciones de esquema · testing (pytest, Vitest, Playwright) · documentación como código (MkDocs, Quarto) · ISO 9001</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Herramientas de IA</dt>
+            <dd>API de Anthropic en producción · orquestación de agentes con definiciones de rol versionadas y tier de costo por modelo · medición y atribución de costo</dd>
+        </dl>
+    </div>
+</section>
+
+<section>
+    <h2>Formación e idiomas</h2>
+    <article class="entry">
+        <h3>Doctorando en Ciencias Naturales</h3>
+        <p class="org">Universidad Nacional de La Plata · conservación de anfibios patagónicos</p>
+        <p class="when">En curso</p>
+    </article>
+    <article class="entry">
+        <h3>Licenciado en Biología (orientación Zoología)</h3>
+        <p class="org">Universidad Nacional de La Plata</p>
+    </article>
+    <article class="entry">
+        <h3>Idiomas</h3>
+        <p class="org">Español — nativo · Inglés — nivel profesional de trabajo</p>
+    </article>
+    <article class="entry">
+        <h3>Software</h3>
+        <p class="org">Autodidacta. Sin formación formal en computación, y los repositorios de arriba son el argumento.</p>
+    </article>
+</section>
+
+<div class="pdf-cta">
+    <p>¿Preferís un archivo? El mismo contenido, listo para adjuntar.</p>
+    <a class="btn" href="../nicolas-kass-cv-es.pdf">Descargar PDF</a>
+</div>
+
+<footer class="foot">
+    <p>
+        Cada cifra que aparece acá es una medición real tomada de los proyectos —líneas,
+        módulos, rutas y registros contados del código fuente, no estimados—. Los
+        identificadores de clientes y los hostnames de producción están omitidos.
+    </p>
+    <p>Última actualización: septiembre de 2026 · <a href="../">English version</a></p>
+</footer>
+
+</div>
+</body>
+</html>

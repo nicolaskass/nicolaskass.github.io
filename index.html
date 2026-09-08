@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolás Kass — Software architect &amp; data engineer | CV</title>
+<meta name="description" content="Biologist who builds production software. Business systems, geospatial data pipelines, and the measurement discipline behind both. La Plata, Argentina.">
+<link rel="canonical" href="https://nicolaskass.github.io/">
+<link rel="alternate" hreflang="es" href="https://nicolaskass.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://nicolaskass.github.io/">
+<meta property="og:title" content="Nicolás Kass — Software architect &amp; data engineer">
+<meta property="og:description" content="Biologist who builds production software. Business systems, geospatial pipelines, and the measurement discipline behind both.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cv.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="langbar">
+    <span class="is-current">EN</span>
+    <a href="es/">ES</a>
+</nav>
+
+<header class="head">
+    <h1>Nicolás Kass</h1>
+    <p class="role">Software architect &amp; data engineer</p>
+    <p class="pitch">
+        I build the operational systems small businesses actually run on — inventory, point of
+        sale, invoicing, field tooling — and the data pipelines behind them. Backend, frontend,
+        deployment and the operation itself, because for most of my career there was nobody else
+        to hand it to. I came to software from field biology, which is where I learned that a
+        number needs a defence.
+    </p>
+    <div class="meta">
+        <span>La Plata, Argentina · remote-friendly</span>
+        <span><a href="https://github.com/nicolaskass">github.com/nicolaskass</a></span>
+        <span><a href="https://www.linkedin.com/in/nicolaskass">LinkedIn</a></span>
+        <span><a href="https://t3.com.ar">t3.com.ar</a></span>
+    </div>
+</header>
+
+<section>
+    <h2>What I have published</h2>
+    <p class="lead">
+        Four public repositories documenting how my systems are built and why. No client source
+        code — the reasoning: what I decided, what I rejected, and what each decision cost.
+        <strong>33 architecture decision records</strong> between them.
+    </p>
+
+    <div class="repos">
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/specialty-retail-erp">Specialty Retail ERP</a></h3>
+            <span class="url">github.com/nicolaskass/specialty-retail-erp</span>
+            <p class="what">A production ERP · 13 modules · 84 models · 229 routes · ~190k LOC</p>
+            <p>
+                System architecture at real scale: modules as bounded contexts with an acyclic
+                dependency graph, and a consolidation refactor that unified four transaction types
+                and three payment systems over live financial data.
+            </p>
+            <div class="tags">
+                <span class="tag">Django</span><span class="tag">DRF</span><span class="tag">MongoDB</span><span class="tag">React</span><span class="tag">Docker</span><span class="tag">Traefik</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/geospatial-survey-toolkit">Geospatial Survey Toolkit</a></h3>
+            <span class="url">github.com/nicolaskass/geospatial-survey-toolkit</span>
+            <p class="what">Field tooling for a land-surveying practice</p>
+            <p>
+                Road-works quality control, survey-code validation and a raster-to-CAD vectoriser,
+                delivered to surveyors on Windows laptops with no Python and sometimes no internet.
+                The tool flags anomalies and refuses to correct them: field data is evidence.
+            </p>
+            <div class="tags">
+                <span class="tag">Python</span><span class="tag">Shapely</span><span class="tag">Streamlit</span><span class="tag">ezdxf</span><span class="tag">potrace</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/geospatial-data-processing">Geospatial Data Processing</a></h3>
+            <span class="url">github.com/nicolaskass/geospatial-data-processing</span>
+            <p class="what">LiDAR &amp; photogrammetry pipeline · reference book, 67 chapters</p>
+            <p>
+                Measurement discipline applied to terrain data: validation against check points
+                never used as control, uncertainty propagated to the delivered volume as two
+                honest bounds, and quality gates that refuse rather than return a plausible
+                wrong answer.
+            </p>
+            <div class="tags">
+                <span class="tag">LiDAR</span><span class="tag">Photogrammetry</span><span class="tag">PDAL</span><span class="tag">GDAL</span><span class="tag">rasterio</span><span class="tag">Quarto</span>
+            </div>
+        </article>
+
+        <article class="repo">
+            <h3><a href="https://github.com/nicolaskass/ecological-data-analysis">Ecological Data Analysis</a></h3>
+            <span class="url">github.com/nicolaskass/ecological-data-analysis</span>
+            <p class="what">Statistics behind four manuscripts · 4 published reproducibility packages</p>
+            <p>
+                Bayesian capture–recapture implemented directly and cross-checked against an
+                established reference, with prior sensitivity analysis and a simulation of my own
+                estimator's bias. Every reported number is generated, never transcribed.
+            </p>
+            <div class="tags">
+                <span class="tag">Bayesian inference</span><span class="tag">MCMC</span><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">Reproducibility</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section>
+    <h2>How I work</h2>
+    <p class="lead">
+        The parts that are not standard. Django and React do not distinguish anyone; these do.
+    </p>
+
+    <div class="principles">
+        <div class="principle">
+            <h3>I make drift impossible instead of promising to prevent it</h3>
+            <p>
+                A post-commit hook that flags documentation gone stale against the code. A checker
+                that verifies every citation from code to manuscript still resolves. A generated
+                file that a paper reads its numbers from, so text and tables cannot disagree.
+                Three domains, three times the same conclusion: anything maintained by intention
+                decays — bind it mechanically.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>I meter what I spend</h3>
+            <p>
+                Every LLM call in production writes tokens, latency and estimated cost to a usage
+                log priced from a maintained table. Cost per feature is a query, not a surprise at
+                the end of the month. Inference is a purchase, and systems meter what they buy.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>I design what happens when a dependency is gone</h3>
+            <p>
+                Optional integrations degrade instead of failing: the provider SDK is imported at
+                the call site, every entry point returns a structured result rather than raising,
+                and the business flow completes with one field empty. A third-party integration
+                has sat broken in production for months, by design, with no user-visible failure.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>I know where automation should stop</h3>
+            <p>
+                In the surveying tools the software classifies anomalies across three severity
+                levels and corrects none of them, because a miscoded point is sometimes a typo and
+                sometimes the only real defect in the job. Automating a judgement is only safe when
+                being wrong is cheap.
+            </p>
+        </div>
+        <div class="principle">
+            <h3>I write down what a decision cost</h3>
+            <p>
+                Every decision record has a section for its downsides, including the cases where I
+                would choose differently for a different problem. A document that lists only
+                benefits is marketing, and it makes everything around it less believable.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Experience</h2>
+
+    <article class="entry">
+        <h3>Founder · Process &amp; systems consultant</h3>
+        <p class="org">T³ — Three Tech Thinkers · La Plata, Argentina</p>
+        <p class="when">[[T3_START]] – present</p>
+        <ul>
+            <li>Operational diagnosis for small businesses: process mapping, quantification of time and money lost, and an intervention plan prioritised by impact.</li>
+            <li>End-to-end project direction: scope, implementation sequence, stakeholder management, and evaluation against the objectives set in the diagnosis.</li>
+            <li>Full-stack development of custom management systems — Python/Django and Node.js on the backend, React with Vite on the frontend, MongoDB and SQL, REST APIs and third-party integrations.</li>
+            <li>LLM APIs integrated into production systems, with per-call cost metering and graceful degradation so an outage never blocks the business flow.</li>
+            <li>Own infrastructure: Linux, Docker and Compose, Traefik and Nginx, VPS deployment with SSL, CI/CD on GitHub Actions.</li>
+            <li>Process redesign and documentation under ISO 9001 criteria.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Head of operations &amp; systems development</h3>
+        <p class="org">Digital Discos · La Plata, Argentina</p>
+        <p class="when">[[DIGI_START]] – 2026</p>
+        <ul>
+            <li>Directed the complete operation of a 30-year-old retail business: purchasing, sales, customer service, staff, stock and suppliers.</li>
+            <li>Designed and built the business's management system: inventory built for 200,000+ <em>unique</em> catalogue items — distinct records with their own price and stock, not repeated units.</li>
+            <li>Marketplace API integration for listing, price control and monitoring against the real market.</li>
+            <li>Automated the order cycle end to end: intake with live catalogue, price and availability, and sale processing without manual intervention.</li>
+            <li>The business went from selling only over the counter to operating nationally without growing its structure.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>University lecturer &amp; researcher</h3>
+        <p class="org">Universidad Nacional de La Plata (UNLP) · Argentina</p>
+        <p class="when">[[UNLP_START]] – present</p>
+        <ul>
+            <li>Research in natural sciences and undergraduate teaching. Design of studies with no prior art, data analysis, and communication of results.</li>
+            <li>PhD candidate in Natural Sciences. Four manuscripts in review or preparation, each with a public reproducibility package.</li>
+            <li>This is the direct origin of the method I apply in consulting: understand the system before intervening, measure against a defined objective, and adjust on evidence rather than intuition.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>External process consultant · ISO 9001</h3>
+        <p class="org">Independent</p>
+        <p class="when">[[ISO_YEARS]]</p>
+        <ul>
+            <li>Redesign of operational processes and procedures under ISO 9001, identification and quantification of unrecorded time and financial losses, and quality management system documentation.</li>
+        </ul>
+    </article>
+
+    <article class="entry">
+        <h3>Alumni · Project co-leader</h3>
+        <p class="org">Conservation Leadership Programme</p>
+        <p class="when">2020 · 2022</p>
+        <ul>
+            <li>International training programme for conservation leaders: project planning, project management, stakeholder engagement and strategic communication. Global virtual cohort in 2020; in-person in South Africa in 2022, with LATAM and Africa cohorts.</li>
+            <li>Future Conservationist Award as team co-leader.</li>
+        </ul>
+    </article>
+</section>
+
+<section>
+    <h2>Technical skills</h2>
+    <div class="skills">
+        <dl class="skillrow">
+            <dt>Backend</dt>
+            <dd>Python · Django · Django REST Framework · Node.js · Express · REST API design · JWT and OAuth · MongoDB / MongoEngine · SQL</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Frontend</dt>
+            <dd>React · Vite · TypeScript · JavaScript · Tailwind · TanStack Query · HTML/CSS</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Infrastructure</dt>
+            <dd>Linux · Docker &amp; Compose · Traefik v3 · Nginx · VPS operation · Let's Encrypt · GitHub Actions · MCP servers</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Geospatial</dt>
+            <dd>GDAL/OGR · PDAL · rasterio · Shapely · GeoPandas · LiDAR classification · photogrammetry (SfM/MVS) · DTM/DSM · DXF · GNSS RTK/PPK</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Data &amp; statistics</dt>
+            <dd>NumPy · SciPy · pandas · Bayesian inference and MCMC · capture–recapture models · non-parametric methods · uncertainty propagation · Matplotlib</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>Practice</dt>
+            <dd>Architecture decision records · modular monolith design · schema migration discipline · testing (pytest, Vitest, Playwright) · documentation as code (MkDocs, Quarto) · ISO 9001</dd>
+        </dl>
+        <dl class="skillrow">
+            <dt>AI tooling</dt>
+            <dd>Anthropic API in production · agent orchestration with version-controlled role definitions and per-role model-cost tiers · usage metering and cost attribution</dd>
+        </dl>
+    </div>
+</section>
+
+<section>
+    <h2>Education &amp; languages</h2>
+    <article class="entry">
+        <h3>PhD candidate, Natural Sciences</h3>
+        <p class="org">Universidad Nacional de La Plata · conservation of Patagonian amphibians</p>
+        <p class="when">In progress</p>
+    </article>
+    <article class="entry">
+        <h3>Licenciado en Biología (Zoology) — equivalent to MSc</h3>
+        <p class="org">Universidad Nacional de La Plata</p>
+    </article>
+    <article class="entry">
+        <h3>Languages</h3>
+        <p class="org">Spanish — native · English — professional working proficiency</p>
+    </article>
+    <article class="entry">
+        <h3>Software</h3>
+        <p class="org">Self-taught. No formal computing qualification, and the repositories above are the argument.</p>
+    </article>
+</section>
+
+<div class="pdf-cta">
+    <p>Prefer a file? Same content, one page layout, ready to attach.</p>
+    <a class="btn" href="nicolas-kass-cv-en.pdf">Download PDF</a>
+</div>
+
+<footer class="foot">
+    <p>
+        Every figure quoted here is a real measurement taken from the projects — lines, modules,
+        routes and records counted from the source, not estimated. Client identifiers and
+        deployment hostnames are omitted throughout.
+    </p>
+    <p>Last updated: September 2026 · <a href="es/">Versión en español</a></p>
+</footer>
+
+</div>
+</body>
+</html>

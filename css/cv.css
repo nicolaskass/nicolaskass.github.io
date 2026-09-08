@@ -1,0 +1,361 @@
+/* CV — Nicolás Kass
+   Paleta y tipografía del manual de marca de T³: acento cian #00d4ff,
+   superficies oscuras #0a0a0f / #111118, Montserrat.
+   Pantalla en oscuro; impresión en claro (§ @media print al final). */
+
+:root {
+    --bg:            #0a0a0f;
+    --bg-alt:        #111118;
+    --bg-card:       #16161f;
+    --border:        #252535;
+    --text:          #eaeaef;
+    --text-soft:     #9090a8;
+    --text-muted:    #606078;
+    --accent:        #00d4ff;
+    --accent-soft:   rgba(0, 212, 255, 0.12);
+    --violet:        #6c5ce7;
+    --measure:       74ch;
+    --font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.62;
+    font-weight: 400;
+}
+
+.wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+
+/* ── Barra de idioma ─────────────────────────────────────────────── */
+
+.langbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: .75rem;
+    align-items: center;
+    padding: 1.25rem 0 0;
+    font-size: .82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.langbar a, .langbar span {
+    color: var(--text-muted);
+    padding: .3rem .6rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.langbar .is-current {
+    color: var(--accent);
+    border-color: var(--border);
+    background: var(--accent-soft);
+}
+
+/* ── Encabezado ──────────────────────────────────────────────────── */
+
+.head { padding: 2.5rem 0 2rem; }
+
+.head h1 {
+    font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin: 0 0 .35rem;
+    line-height: 1.08;
+}
+
+.head .role {
+    font-size: clamp(1.02rem, 2.6vw, 1.24rem);
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 1.4rem;
+}
+
+.head .pitch {
+    max-width: var(--measure);
+    color: var(--text-soft);
+    margin: 0 0 1.6rem;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.4rem;
+    font-size: .9rem;
+    color: var(--text-muted);
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Secciones ───────────────────────────────────────────────────── */
+
+section { padding-top: 2.8rem; }
+
+h2 {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 .35rem;
+}
+
+h2 + .lead {
+    color: var(--text-soft);
+    max-width: var(--measure);
+    margin: 0 0 1.6rem;
+    font-size: .96rem;
+}
+
+h3 {
+    font-size: 1.06rem;
+    font-weight: 700;
+    margin: 0 0 .2rem;
+    letter-spacing: -.005em;
+}
+
+p { max-width: var(--measure); }
+
+/* ── Entradas de experiencia ─────────────────────────────────────── */
+
+.entry {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.entry:first-of-type { border-top: none; padding-top: .4rem; }
+
+.entry .org {
+    color: var(--text-soft);
+    font-size: .93rem;
+    font-weight: 500;
+    margin: 0 0 .15rem;
+}
+
+.entry .when {
+    color: var(--text-muted);
+    font-size: .84rem;
+    letter-spacing: .02em;
+    margin: 0 0 .85rem;
+}
+
+.entry ul { margin: .7rem 0 0; padding-left: 1.05rem; }
+.entry li { margin-bottom: .45rem; max-width: var(--measure); }
+.entry li::marker { color: var(--accent); }
+
+/* ── Tarjetas de repositorio ─────────────────────────────────────── */
+
+.repos { display: grid; gap: 1rem; margin-top: 1.2rem; }
+
+.repo {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.3rem 1.4rem;
+    transition: border-color .2s ease;
+}
+
+.repo:hover { border-color: var(--accent); }
+
+.repo h3 { margin-bottom: .1rem; }
+.repo h3 a { color: var(--text); }
+.repo h3 a::after { content: " ↗"; font-size: .78em; color: var(--text-muted); }
+.repo h3 a:hover { color: var(--accent); text-decoration: none; }
+.repo h3 a:hover::after { color: var(--accent); }
+
+.repo .what {
+    color: var(--text-muted);
+    font-size: .84rem;
+    margin: 0 0 .55rem;
+}
+
+.repo p { margin: 0; font-size: .93rem; color: var(--text-soft); }
+
+/* ── Principios (lo que diferencia) ──────────────────────────────── */
+
+.principles { display: grid; gap: 1.35rem; margin-top: 1.2rem; }
+
+.principle {
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--accent);
+}
+
+.principle h3 { font-size: 1rem; margin-bottom: .3rem; }
+.principle p { margin: 0; font-size: .93rem; color: var(--text-soft); }
+
+/* ── Etiquetas ───────────────────────────────────────────────────── */
+
+.tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+
+.tag {
+    font-size: .76rem;
+    letter-spacing: .02em;
+    color: var(--text-soft);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .22rem .62rem;
+}
+
+/* ── Grupos de aptitudes ─────────────────────────────────────────── */
+
+.skills { display: grid; gap: 1.1rem; margin-top: 1.1rem; }
+
+.skillrow { display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 1.2rem; }
+
+.skillrow dt {
+    font-weight: 600;
+    font-size: .88rem;
+    color: var(--text);
+    padding-top: .12rem;
+}
+
+.skillrow dd { margin: 0; color: var(--text-soft); font-size: .92rem; }
+
+@media (max-width: 620px) {
+    .skillrow { grid-template-columns: 1fr; gap: .2rem; }
+}
+
+/* ── Descarga PDF ────────────────────────────────────────────────── */
+
+.pdf-cta {
+    margin-top: 3rem;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-alt);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pdf-cta p { margin: 0; font-size: .92rem; color: var(--text-soft); }
+
+.btn {
+    display: inline-block;
+    padding: .6rem 1.15rem;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #04141a;
+    font-weight: 700;
+    font-size: .89rem;
+    letter-spacing: .01em;
+}
+
+.btn:hover { background: #33dfff; text-decoration: none; }
+
+/* ── Pie ─────────────────────────────────────────────────────────── */
+
+.foot {
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: .82rem;
+}
+
+.foot p { max-width: var(--measure); }
+
+/* ── Tema claro del sistema ──────────────────────────────────────── */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #ffffff;  --bg-alt: #eef1f6;  --bg-card: #ffffff;
+        --border: #e2e4ea;
+        --text: #1a1a2e;  --text-soft: #48485f;  --text-muted: #6b6b85;
+        --accent: #0088cc;               /* el cian brillante no contrasta sobre blanco */
+        --accent-soft: rgba(0, 136, 204, .09);
+    }
+    .btn { color: #ffffff; }
+    .btn:hover { background: #0077b3; }
+}
+
+/* ── Impresión / PDF ─────────────────────────────────────────────── */
+
+@page {
+    size: A4;
+    margin: 15mm 16mm 16mm;
+    @bottom-center {
+        content: "Nicolás Kass · " counter(page) " / " counter(pages);
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 8pt;
+        color: #8888a0;
+    }
+}
+
+@media print {
+    :root {
+        --bg: #ffffff;  --bg-alt: #ffffff;  --bg-card: #ffffff;
+        --border: #d9dbe3;
+        --text: #14141f;  --text-soft: #33334a;  --text-muted: #5c5c74;
+        --accent: #006f9c;               /* legible en impresión a color y en gris */
+        --accent-soft: transparent;
+        --measure: 100%;
+    }
+
+    body { font-size: 9pt; line-height: 1.38; }
+    .wrap { max-width: none; padding: 0; }
+    p { margin: .3rem 0; }
+
+    /* Nada de esto tiene sentido en papel */
+    .langbar, .pdf-cta, .repo:hover { display: none; }
+
+    a { color: var(--text); text-decoration: none; }
+
+    /* Las URL importan en papel: si no se ven, el link no existe */
+    .repo h3 a::after { content: ""; }
+    .repo h3 a { color: var(--text); }
+    .repo .url {
+        display: block;
+        font-size: 7.8pt;
+        color: var(--accent);
+        margin-top: .15rem;
+        word-break: break-all;
+    }
+
+    .head { padding: 0 0 1rem; }
+    .head h1 { font-size: 22pt; }
+    .head .role { font-size: 11pt; margin-bottom: .7rem; }
+
+    section { padding-top: 1.15rem; }
+    h2 { font-size: 8pt; margin-bottom: .25rem; }
+    h2 + .lead { font-size: 9pt; margin-bottom: .8rem; }
+    h3 { font-size: 10pt; }
+
+    .entry { padding: .75rem 0; break-inside: avoid; }
+    .entry li { margin-bottom: .22rem; }
+
+    .repos { gap: .5rem; }
+    .repo { padding: .6rem .7rem; break-inside: avoid; }
+    .repo p { font-size: 8.8pt; }
+
+    .principle { break-inside: avoid; }
+    .principles { gap: .8rem; }
+
+    .tag { font-size: 7.5pt; padding: .1rem .45rem; }
+
+    .foot { margin-top: 1.4rem; font-size: 8pt; }
+
+    /* Solo las unidades chicas se mantienen enteras. Aplicar esto a `section`
+       empuja una sección completa a la página siguiente y deja media hoja en
+       blanco — que es exactamente lo que pasaba. */
+    .entry, .repo, .principle { page-break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
+}
