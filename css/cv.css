@@ -1,4 +1,4 @@
-/* CV — Nicolás Kass
+/* CV — Nicolas Kass
    Paleta y tipografía del manual de marca de T³: acento cian #00d4ff,
    superficies oscuras #0a0a0f / #111118, Montserrat.
    Pantalla en oscuro; impresión en claro (§ @media print al final). */
@@ -293,7 +293,7 @@ p { max-width: var(--measure); }
     size: A4;
     margin: 15mm 16mm 16mm;
     @bottom-center {
-        content: "Nicolás Kass · " counter(page) " / " counter(pages);
+        content: "Nicolas Kass · " counter(page) " / " counter(pages);
         font-family: "Montserrat", Arial, sans-serif;
         font-size: 8pt;
         color: #8888a0;
