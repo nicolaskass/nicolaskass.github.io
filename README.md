@@ -18,5 +18,5 @@ python3 -m venv .venv && .venv/bin/pip install weasyprint
 Antes de publicar cambios, verificar que no queden marcadores sin completar:
 
 ```bash
-grep -rn '\[\[' index.html es/index.html
+grep -rn '\[\[' index.html es/index.html   # 4 marcadores: T3_START, DIGI_START, UNLP_START, ISO_YEARS
 ```
