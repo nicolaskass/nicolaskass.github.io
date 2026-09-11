@@ -273,6 +273,39 @@ p { max-width: var(--measure); }
 
 .foot p { max-width: var(--measure); }
 
+/* ── Versión corta ───────────────────────────────────────────────── */
+
+/* La versión de dos páginas para postulaciones sale de este mismo HTML: el
+   panel de T3 le pone la clase cv-corto al <html> y esto oculta lo que sobra.
+   Una sola fuente, así la corta no se queda atrás cuando se edita la larga.
+   Va en <html> y no en <body> porque achicar el rem solo se puede desde la raíz. */
+.cv-corto .no-corto,
+.cv-corto .repo p:not(.what),
+.cv-corto .repo .tags,
+.cv-corto h2 + .lead,
+.cv-corto .foot { display: none; }
+
+@media print {
+    /* Casi todo está medido en rem, y el rem sale de la raíz (16px), no de los
+       9pt del body: sin esto las aptitudes y los márgenes imprimen más grandes
+       de lo que el resto del bloque de impresión supone. */
+    html.cv-corto { font-size: 11px; }
+
+    .cv-corto .skills { margin-top: .5rem; }
+    .cv-corto .skillrow + .skillrow { margin-top: .3rem; }
+
+    .cv-corto section { padding-top: .9rem; }
+    .cv-corto .entry { padding: .45rem 0; }
+    .cv-corto .entry .when { margin-bottom: .3rem; }
+    .cv-corto .entry ul { margin-top: .3rem; }
+    .cv-corto .repos { margin-top: .6rem; }
+    .cv-corto .repo + .repo { margin-top: .35rem; }
+    .cv-corto .repo { padding: .4rem .6rem; }
+    .cv-corto .repo .what { margin: 0; }
+    .cv-corto .head .pitch { margin-bottom: .8rem; }
+    .cv-corto .meta { padding-top: .5rem; margin-top: .4rem; }
+}
+
 /* ── Tema claro del sistema ──────────────────────────────────────── */
 
 @media (prefers-color-scheme: light) {
@@ -310,6 +343,9 @@ p { max-width: var(--measure); }
         --measure: 100%;
     }
 
+    /* Casi todo está en rem, que sale de la raíz y no de los 9pt del body.
+       A 16px, el español dejaba una sexta hoja con siete renglones. */
+    html { font-size: 15px; }
     body { font-size: 9pt; line-height: 1.38; }
     .wrap { max-width: none; padding: 0; }
     p { margin: .3rem 0; }
@@ -342,7 +378,18 @@ p { max-width: var(--measure); }
     .entry { padding: .75rem 0; break-inside: avoid; }
     .entry li { margin-bottom: .22rem; }
 
-    .repos { gap: .5rem; }
+    /* WeasyPrint no parte bien un contenedor grid entre páginas: con los repos
+       en grid, sumarle un renglón al encabezado mandaba toda la experiencia a
+       la hoja siguiente y dejaba media página en blanco. En papel son bloques
+       comunes, con el espacio puesto a mano. */
+    .repos, .skills, .principles { display: block; }
+    .repo + .repo { margin-top: .5rem; }
+    .principle + .principle { margin-top: .8rem; }
+
+    /* El <dl> trae margen propio: era el hueco de tres renglones entre filas. */
+    .skillrow { margin: 0; break-inside: avoid; }
+    .skillrow + .skillrow { margin-top: .5rem; }
+
     .repo { padding: .6rem .7rem; break-inside: avoid; }
     .repo p { font-size: 8.8pt; }
 
